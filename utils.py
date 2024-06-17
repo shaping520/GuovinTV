@@ -718,6 +718,8 @@ async def get_channels_by_fofa(callback):
                 except Exception as e:
                     # print(f"{url}: {e}")
                     continue
+            if channels:
+                print(fofa_url, len(channels), channels)
             merge_objects(fofa_results, channels)
         except Exception as e:
             # print(e)
