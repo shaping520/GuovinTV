@@ -24,7 +24,7 @@ recent_days = 30
 ipv_type = "ipv4"
 domain_blacklist = ["epg.pw"]
 url_keywords_blacklist = []
-open_subscribe = True
+open_subscribe = False
 subscribe_urls = [
 ]
 open_multicast = True
