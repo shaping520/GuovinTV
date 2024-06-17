@@ -63,20 +63,19 @@ def resource_path(relative_path, persistent=False):
 
 
 def load_external_config(name):
+    def load_external_config(name):
     """
     Load the external config file
     """
     config = None
     config_path = name
     config_filename = os.path.join(os.path.dirname(sys.executable), config_path)
-
-    if os.path.exists(config_filename):
-        spec = importlib.util.spec_from_file_location(name, config_filename)
-        config = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(config)
-    else:
-        import name
-
+    if not os.path.exists(config_filename):
+        config_filename = os.path.join(config_path)
+    spec = importlib.util.spec_from_file_location(name, config_filename)
+    config = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(config)
+    import config
     return config
 
 
