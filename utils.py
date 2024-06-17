@@ -75,7 +75,7 @@ def load_external_config(name):
         config = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(config)
     else:
-        import config
+        import name
 
     return config
 
