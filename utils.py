@@ -63,7 +63,6 @@ def resource_path(relative_path, persistent=False):
 
 
 def load_external_config(name):
-    def load_external_config(name):
     """
     Load the external config file
     """
